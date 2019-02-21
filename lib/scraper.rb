@@ -27,7 +27,7 @@ class Scraper
     info[:linkedin] = ""
     info[:github] = ""
     info[:blog] = ""
-    
+
     doc.css(".social-icon-container a").each do |link|
       if link.include? "twitter"
         info[:twitter] = "#{link['href']}"
