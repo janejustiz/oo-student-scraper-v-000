@@ -28,7 +28,7 @@ class Scraper
       info[:twitter] = "#{link}" if link.include? "twitter"
       info[:linkedin] = "#{link}" if link.include? "linkedin"
       info[:github] = "#{link}" if link.include? "github"
-      info[:blog] = "#{link}" if (link.include? "https://#{blog}.com/" || link.include? "http://#{blog}.com/" || link.include? "https://www.#{blog}.com/" || link.include? "http://www.#{blog}.com/")
+      info[:blog] = "#{link}" if ((link.include? "https://#{blog}.com/") || (link.include? "http://#{blog}.com/") || (link.include? "https://www.#{blog}.com/") || (link.include? "http://www.#{blog}.com/"))
     end
 
     info[:profile_quote] = "#{doc.css(".profile-quote").text}"
