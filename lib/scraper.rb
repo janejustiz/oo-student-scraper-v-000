@@ -34,6 +34,8 @@ class Scraper
       info[:blog] = "#{link.css("a")['href']}" if link.include? Student.name
     end
 
+    binding.pry
+
     info[:profile_quote] = "#{doc.css(".profile-quote").text}"
     info[:bio] = "#{doc.css(".bio-content").css(".description-holder").css("p").text}"
 
