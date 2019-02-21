@@ -27,7 +27,7 @@ class Scraper
       info[:twitter] = "#{link}" if link.include? "twitter"
       info[:linkedin] = "#{link}" if link.include? "linkedin"
       info[:github] = "#{link}" if link.include? "github"
-      info[:blog] = "#{link}" if link.include? "#{doc.css("vitals-text-container profile-name").text.delete" "}"
+      info[:blog] = "#{link}" if link.include? doc.css("vitals-text-container profile-name").text.delete" "
     end
 
     info[:profile_quote] = "#{doc.css(".profile-quote").text}"
