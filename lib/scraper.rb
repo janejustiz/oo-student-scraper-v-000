@@ -27,16 +27,11 @@ class Scraper
     info[:github] = ""
     info[:blog] = ""
 
-    doc.css(".social-icon-container a").each do |link|
-      if link.include? "twitter"
-        info[:twitter] = "#{link['href']}"
-      elsif link.include? "linkedin"
-         info[:linkedin] = "#{link['href']}"
-      elsif link.include? "github"
-        info[:github] = "#{link['href']}"
-      #elsif link.include? students[:name]
-      #  info[:blog] = link['href']
-      end
+    doc.css(".social-icon-container").each do |link|
+      info[:twitter] = "#{link.css("a")['href']}" if link.include? "twitter"
+      info[:linkedin] = "#{link.css("a")['href']}" if link.include? "linkedin"
+      info[:github] = "#{link.css("a")['href']}" if link.include? "github"
+      info[:blog] = "#{link.css("a")['href']}" if link.include? students[:name]
     end
 
     info[:profile_quote] = "#{doc.css(".profile-quote").text}"
