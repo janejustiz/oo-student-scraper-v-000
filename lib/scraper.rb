@@ -25,13 +25,13 @@ class Scraper
     doc.css(".social-icon-container a").each do |word|
       link = word['href']
       if link.include? "twitter"
-        info[:twitter] = "#{link}" 
+        info[:twitter] = "#{link}"
       elsif link.include? "linkedin"
-        info[:linkedin] = "#{link}" 
+        info[:linkedin] = "#{link}"
       elsif link.include? "github"
-        info[:github] = "#{link}" 
+        info[:github] = "#{link}"
       elsif link.include? doc.css("vitals-text-container h1 profile-name").text
-        info[:blog] = "#{link}" 
+        info[:blog] = "#{link}"
       end
     end
 
