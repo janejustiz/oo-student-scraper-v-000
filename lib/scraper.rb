@@ -24,10 +24,11 @@ class Scraper
 
     doc.css(".social-icon-container a").each do |word|
       link = word['href']
+      blog = doc.css("vitals-text-container h1").text
       info[:twitter] = "#{link}" if link.include? "twitter"
       info[:linkedin] = "#{link}" if link.include? "linkedin"
       info[:github] = "#{link}" if link.include? "github"
-      info[:blog] = "#{link}" if link.include? "#{doc.css("vitals-text-container h1").text.delete " "}.com/"
+      info[:blog] = "#{link}" if link.include? "#{blog.delete " "}.com/"
     end
 
     info[:profile_quote] = "#{doc.css(".profile-quote").text}"
