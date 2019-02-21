@@ -22,7 +22,6 @@ class Scraper
     info = {}
     doc = Nokogiri::HTML(open(profile_url))
 
-    social_icon_container = .css("a")
     info[:twitter] = ""
     info[:linkedin] = ""
     info[:github] = ""
