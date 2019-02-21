@@ -31,7 +31,7 @@ class Scraper
       info[:twitter] = "#{link.css("a")['href']}" if link.include? "twitter"
       info[:linkedin] = "#{link.css("a")['href']}" if link.include? "linkedin"
       info[:github] = "#{link.css("a")['href']}" if link.include? "github"
-      info[:blog] = "#{link.css("a")['href']}" if link.include? students[:name]
+      info[:blog] = "#{link.css("a")['href']}" if link.include? Student.name
     end
 
     info[:profile_quote] = "#{doc.css(".profile-quote").text}"
